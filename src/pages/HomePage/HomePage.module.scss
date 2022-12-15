@@ -1,0 +1,26 @@
+.homePage {
+    padding: 
+        calc(20px + (40 - 20) * (100vw - 360px) / (1920 - 360))
+        calc(10px + (80 - 10) * (100vw - 360px) / (1920 - 360));
+        
+    p {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: calc(20px + (36 - 20) * (100vw - 360px) / (1920 - 360));
+        line-height: 140%;
+        color: #FFFFFF;
+        margin-left: 0;
+    }
+}
+
+.light {
+    position: absolute;
+    width: 70vw;
+    height: 20vh;
+    left: calc((100vw - 70vw) / 2);
+    top: 300px;
+    background: linear-gradient(90deg, #8B39B2 0%, #E2F063 100%);
+    opacity: 0.6;
+    filter: blur(100px);
+}

@@ -1,0 +1,71 @@
+@import "../../styles/Variables.scss";
+
+.form {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 11;
+    background: $backgroundColor;
+    padding: 
+        calc(20px + (40 - 20) * (100vw - 360px) / (1920 - 360))
+        calc(10px + (80 - 10) * (100vw - 360px) / (1920 - 360));
+
+    form {
+        width: 630px;
+        button {
+            width: 117px;
+            height: 34px;
+            background: #FFFFFF;
+            border-radius: 6px;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 22px;
+            line-height: 26px;
+            color: #000000;
+            margin-top: 30px;
+            transition: 0.6s;
+            cursor: pointer;
+        }
+        button:hover {
+            background: $yellow;
+            transition: 0.6s;
+        }
+    }
+}
+
+.firstName, .lastName {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 30px;
+    label {
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        line-height: 26px;
+        color: #FFFFFF;
+    }
+}
+
+.input {
+    width: calc(340px + (450 - 340) * (100vw - 360px) / (1920 - 360));
+    background: #FFFFFF;
+    border-radius: 6px;
+    height: 35px;
+}
+
+.input.error {
+    background: $errorColor;
+}
+
+
+@media screen and (max-width: 768px) {
+    .firstName, .lastName {
+        flex-direction: column;
+        input {
+            margin-top: 10px;
+        }
+    }
+}

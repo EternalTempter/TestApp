@@ -1,0 +1,11 @@
+@import "../../../styles/Variables.scss";
+
+.header {
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 500;
+    font-size: calc(40px + (70 - 40) * (100vw - 360px) / (1920 - 360));
+    line-height: 70px;
+    color: $yellow;
+    margin-left: 0;
+}

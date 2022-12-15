@@ -1,0 +1,183 @@
+@import "../../styles/Variables.scss";
+
+.header {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 
+        calc(20px + (40 - 20) * (100vw - 360px) / (1920 - 360))
+        calc(10px + (80 - 10) * (100vw - 360px) / (1920 - 360));
+}
+
+.logo {
+    width: 100vw;
+    font-family: 'Open Sans';
+    font-style: normal;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 40px;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: 0.6s;
+}
+
+.logo:hover {
+    transition: 0.6s;
+    color: $yellow;
+}
+
+.menu {
+    list-style-type: none;
+    display: flex;
+    li:hover, li a:hover {
+        transition: 0.6s;
+        color: $yellow;
+        text-decoration: underline;
+    }
+}
+
+.menuItem {
+    cursor: pointer;
+    margin-left: 30px;
+    transition: 0.6s;
+    font-family: 'Gilroy';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+    color: #FFFFFF;
+    text-decoration: none;
+    a {
+        transition: 0.6s;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+}
+
+.toggledMenuButton {
+    transition: 0.6s;
+    color: $yellow;
+    text-decoration: underline;
+    a {
+        color: $yellow;
+        text-decoration: underline;
+    }
+}
+
+
+.burgerMenuButton {
+    width: 80px;
+    height: 80px;
+    display: none;
+    position: absolute;
+    z-index: 13;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    
+    div {
+        width: 43px;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+    }
+
+    &.opened div {
+        transform: translateX(-40px);
+        background: transparent;
+    }
+    
+    div::after, div::before {
+        content: '';
+        position: absolute;
+        width: 43px;
+        height: 2px;
+        background: #fff;
+        border-radius: 5px;
+        transition: all .5s ease-in-out;
+    }
+    
+    &.opened div::before {
+        transform: rotate(45deg) translate(35px, -35px);
+    }
+    
+    &.opened div::after {
+        transform: rotate(-45deg) translate(35px, 35px);
+    }
+    
+    div::before {
+        transform: translateY(-8px);
+    }
+    
+    div::after {
+        transform: translateY(8px);
+    }
+}
+
+.burgerMenu {
+    position: absolute;
+    z-index: 12;
+    left: 100%;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition: all .5s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    p {
+        z-index: 10;
+        text-align: center;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 60px;
+        line-height: 72px;
+        color: #FFFFFF;
+    }
+    
+    &.opened {
+        transition: all .5s ease-in-out;
+        left: 0;
+        background: $backgroundColor;
+    }
+    
+    ul {
+        z-index: 10;
+        list-style-type: none;
+        li, li a{
+            cursor: pointer;
+            text-align: center;
+            font-family: 'Gilroy';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 60px;
+            line-height: 72px;
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .burgerMenuButton {
+        display: flex;
+    }
+    .menu {
+        display: none;
+    }
+}
