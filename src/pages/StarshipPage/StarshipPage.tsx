@@ -8,6 +8,10 @@ const StarshipPage = () => {
     const {id} = useParams();
     const {isLoading, isError, data} = useGetStarshipQuery(String(id));
 
+    function handleImageError(event: any) {
+        event.target.src = `https://starwars-visualguide.com/assets/img/starships/9.jpg`;
+    }
+
     return (
         <div className={styles.starshipPage}>
             <H1>{data && data.name}</H1>
@@ -18,7 +22,10 @@ const StarshipPage = () => {
                 <>
                     <div className={styles.starship}>
                         <div className={isLoading ? [styles.starshipImage, styles.mock].join(' ') : styles.starshipImage}>                
-                            <img src={`https://starwars-visualguide.com/assets/img/starships/${data && data.url.slice(32, -1)}.jpg`}/> 
+                            <img 
+                                src={`https://starwars-visualguide.com/assets/img/starships/${data && data.url.slice(32, -1)}.jpg`}
+                                onError={event => handleImageError(event)}
+                            /> 
                         </div>
                         <div className={styles.starshipInfo}>
                             <ul>

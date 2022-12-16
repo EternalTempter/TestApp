@@ -6,6 +6,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import { BrowserRouter } from 'react-router-dom';
+import './assets/fonts/gilroy-medium.ttf';
+import './assets/fonts/gilroy-regular.ttf';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
